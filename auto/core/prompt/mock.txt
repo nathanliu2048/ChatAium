@@ -1,0 +1,64 @@
+        data = """
+                            {
+                                "data": {
+                                    "locators": [{
+                                            "name": "百度搜索框",
+                                            "desc": "百度搜索输入框",
+                                            "locator": "id",
+                                            "value": "kw"
+                                        },
+                                        {
+                                            "name": "百度搜索按钮",
+                                            "desc": "百度搜索提交按钮",
+                                            "locator": "id",
+                                            "value": "su"
+                                        }
+                                    ]
+                                },
+                                "thoughts": "要执行百度搜索今日天气，您可以使用上述元素定位信息，先在搜索框中输入'今日天气'，然后点击搜索按钮。",
+                                "command": {
+                                    "name": "taskComplete",
+                                    "args": {
+                                        "reason": "已找到百度搜索框和搜索按钮的元素定位信息"
+                                    }
+                                },
+                                "next": false
+                    }
+                """
+        # 解析 JSON 数据
+        parsed_data = json.loads(data)
+
+
+
+
+
+
+
+
+
+
+
+
+         # AI 生成
+        script_data = """
+        {
+            "data": {
+                "script_code": "search_input = driver.find_element(by='id', value='kw')\\nsearch_input.send_keys('今日天气')\\nsearch_button = driver.find_element(by='id', value='su')\\nsearch_button.click()"
+            },
+            "thoughts": "首先，通过元素定位找到百度搜索输入框（kw），然后使用send_keys方法输入 '今日天气'。接着，找到百度搜索提交按钮（su），使用click方法点击搜索按钮。",
+            "command": {
+                "name": "taskComplete",
+                "args": {
+                    "reason": "生成脚本完成后执行"
+                }
+            },
+            "next": false
+        }
+        """
+
+        # 解析JSON数据
+        data = json.loads(script_data)
+
+        # 提取script_code字段的值
+        script_code = data["data"]["script_code"]
+        print(script_code)

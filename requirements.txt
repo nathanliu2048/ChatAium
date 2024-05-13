@@ -1,0 +1,8 @@
+selenium>=4.11.2
+webdriver-manager
+openai
+pydantic
+inflection
+jsonschema
+beautifulsoup4
+orjson==3.8.10

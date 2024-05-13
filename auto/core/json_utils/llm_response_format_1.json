@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "data": {
+             "type": "object",
+            "additionalProperties": true
+        },
+        "thoughts": {
+            "type": "string",
+            "additionalProperties": false
+        },
+        "command": {
+            "type": "object",
+            "properties": {
+                "name": {"type": "string"},
+                "args": {
+                    "type": "object"
+                }
+            },
+            "required": ["name", "args"],
+            "additionalProperties": false
+        }
+    },
+    "required": ["thoughts", "command"],
+    "additionalProperties": true
+}
